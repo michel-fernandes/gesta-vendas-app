@@ -1,0 +1,1165 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 1,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "3v8UUWnVz"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 8,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "text": {},
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.1.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "editorMode": "code",
+            "expr": "http_server_requests_seconds_count{job=\"gestao-vendas\", uri=\"/produto\"}",
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "range": true,
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "editorMode": "code",
+            "expr": "http_server_requests_seconds_count{job=\"gestao-vendas\", uri=\"/produto/{codigo}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "range": true,
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "editorMode": "code",
+            "expr": "http_server_requests_seconds_count{job=\"gestao-vendas\", uri=\"/produto/{codigo}/categoria/{codigoCategoria}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "range": true,
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "editorMode": "code",
+            "expr": "http_server_requests_seconds_count{job=\"gestao-vendas\", uri=\"/produto/categoria/{codigoCategoria}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "range": true,
+            "refId": "D"
+          }
+        ],
+        "title": "Produto COUNT",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "3v8UUWnVz"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "id": 16,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "text": {},
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.1.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_count{job=\"gestao-vendas\", uri=\"/categoria/{codigo}\"}",
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_count{job=\"gestao-vendas\", uri=\"/categoria\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "B"
+          }
+        ],
+        "title": "Categoria COUNT",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "3v8UUWnVz"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        },
+        "id": 12,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": true,
+          "showThresholdMarkers": true,
+          "text": {}
+        },
+        "pluginVersion": "9.1.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "editorMode": "code",
+            "expr": "http_server_requests_seconds_sum{job=\"gestao-vendas\", uri=\"/produto\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "range": true,
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "editorMode": "code",
+            "expr": "http_server_requests_seconds_sum{job=\"gestao-vendas\", uri=\"/produto/{codigo}/categoria/{codigoCategoria}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "range": true,
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "editorMode": "code",
+            "expr": "http_server_requests_seconds_sum{job=\"gestao-vendas\", uri=\"/produto/categoria/{codigoCategoria}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "range": true,
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "editorMode": "code",
+            "expr": "http_server_requests_seconds_sum{job=\"gestao-vendas\", uri=\"/produto/{codigo}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "range": true,
+            "refId": "D"
+          }
+        ],
+        "title": "Produto SUM",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "3v8UUWnVz"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": []
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 8
+        },
+        "id": 6,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": true,
+          "showThresholdMarkers": true,
+          "text": {}
+        },
+        "pluginVersion": "9.1.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_sum{job=\"gestao-vendas\", uri=\"/categoria\"}",
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_sum{job=\"gestao-vendas\", uri=\"/categoria/{codigo}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "B"
+          }
+        ],
+        "title": "Categoria SUM",
+        "type": "gauge"
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": {
+          "type": "prometheus",
+          "uid": "3v8UUWnVz"
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 16
+        },
+        "hiddenSeries": false,
+        "id": 14,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "9.1.2",
+        "pointradius": 1,
+        "points": true,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "editorMode": "code",
+            "expr": "http_server_requests_seconds_max{job=\"gestao-vendas\", uri=\"/produto/{codigo}/categoria/{codigoCategoria}\"}",
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "range": true,
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "editorMode": "code",
+            "expr": "http_server_requests_seconds_max{job=\"gestao-vendas\", uri=\"/produto/{codigo}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "range": true,
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "editorMode": "code",
+            "expr": "http_server_requests_seconds_max{job=\"gestao-vendas\", uri=\"/produto/categoria/{codigoCategoria}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "range": true,
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "editorMode": "code",
+            "expr": "http_server_requests_seconds_max{job=\"gestao-vendas\", uri=\"/produto\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "range": true,
+            "refId": "D"
+          }
+        ],
+        "thresholds": [],
+        "timeRegions": [],
+        "title": "Produto MAX",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "mode": "time",
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "logBase": 1,
+            "show": true
+          },
+          {
+            "format": "short",
+            "logBase": 1,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": {
+          "type": "prometheus",
+          "uid": "3v8UUWnVz"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 16
+        },
+        "hiddenSeries": false,
+        "id": 4,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "9.1.2",
+        "pointradius": 1,
+        "points": true,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_max{job=\"gestao-vendas\", uri=\"/categoria\"}",
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "/categoria"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_max{job=\"gestao-vendas\", uri=\"/categoria/{codigo}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "/categoria/codigo"
+          }
+        ],
+        "thresholds": [],
+        "timeRegions": [],
+        "title": "Categoria MAX",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "mode": "time",
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:117",
+            "format": "short",
+            "logBase": 1,
+            "show": true
+          },
+          {
+            "$$hashKey": "object:118",
+            "format": "short",
+            "logBase": 1,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false
+        }
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "3v8UUWnVz"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 24
+        },
+        "id": 18,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "text": {},
+          "textMode": "value_and_name"
+        },
+        "pluginVersion": "9.1.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_count{job=\"gestao-vendas\", uri=\"/cliente\"}",
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_count{job=\"gestao-vendas\", uri=\"/cliente/{codigo}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "B"
+          }
+        ],
+        "title": "Cliente COUNT",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "3v8UUWnVz"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 24
+        },
+        "id": 24,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "text": {},
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.1.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_count{job=\"gestao-vendas\", uri=\"/venda/{codigoVenda}\"}",
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_count{job=\"gestao-vendas\", uri=\"/venda/cliente/{codigoCliente}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "exemplar": false,
+            "expr": "http_server_requests_seconds_count{job=\"gestao-vendas\", uri=\"/venda/{codigoVenda}/cliente/{codigoCliente}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "C"
+          }
+        ],
+        "title": "Venda COUNT",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "3v8UUWnVz"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 32
+        },
+        "id": 20,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": true,
+          "showThresholdMarkers": true,
+          "text": {}
+        },
+        "pluginVersion": "9.1.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_sum{job=\"gestao-vendas\", uri=\"/cliente\"}",
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_sum{job=\"gestao-vendas\", uri=\"/cliente/{codigo}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "B"
+          }
+        ],
+        "title": "Cliente SUM",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "3v8UUWnVz"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 32
+        },
+        "id": 26,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": true,
+          "showThresholdMarkers": true,
+          "text": {}
+        },
+        "pluginVersion": "9.1.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_sum{job=\"gestao-vendas\", uri=\"/venda/{codigoVenda}\"}",
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_count{job=\"gestao-vendas\", uri=\"/venda/cliente/{codigoCliente}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_count{job=\"gestao-vendas\", uri=\"/venda/{codigoVenda}/cliente/{codigoCliente}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "C"
+          }
+        ],
+        "title": "Venda SUM",
+        "type": "gauge"
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": {
+          "type": "prometheus",
+          "uid": "3v8UUWnVz"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 40
+        },
+        "hiddenSeries": false,
+        "id": 22,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "9.1.2",
+        "pointradius": 1,
+        "points": true,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_max{job=\"gestao-vendas\", uri=\"/cliente\"}",
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_max{job=\"gestao-vendas\", uri=\"/cliente/{codigo}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "B"
+          }
+        ],
+        "thresholds": [],
+        "timeRegions": [],
+        "title": "Cliente MAX",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "mode": "time",
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "logBase": 1,
+            "show": true
+          },
+          {
+            "format": "short",
+            "logBase": 1,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": {
+          "type": "prometheus",
+          "uid": "3v8UUWnVz"
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 40
+        },
+        "hiddenSeries": false,
+        "id": 28,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "9.1.2",
+        "pointradius": 1,
+        "points": true,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_max{job=\"gestao-vendas\", uri=\"/venda/{codigoVenda}\"}",
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_count{job=\"gestao-vendas\", uri=\"/venda/cliente/{codigoCliente}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "3v8UUWnVz"
+            },
+            "expr": "http_server_requests_seconds_count{job=\"gestao-vendas\", uri=\"/venda/{codigoVenda}/cliente/{codigoCliente}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}}/{{outcome}}/{{status}}",
+            "refId": "C"
+          }
+        ],
+        "thresholds": [],
+        "timeRegions": [],
+        "title": "Venda MAX",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "mode": "time",
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "logBase": 1,
+            "show": true
+          },
+          {
+            "format": "short",
+            "logBase": 1,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false
+        }
+      }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 37,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-3h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Gestao Vendas",
+    "uid": "MIP7ZJPGk",
+    "version": 5,
+    "weekStart": ""
+  }
